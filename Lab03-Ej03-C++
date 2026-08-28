@@ -1,0 +1,44 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+ int main () {
+// Declaracion de variables
+double Nombre del estudiante, Edad, Carrera, Semestre, Promedio
+// Entrada de datos
+cout << "Ingrese el nombre del estudiantes: ";
+cin >> Nombre del estudiante;
+cout << "Ingrese la edad del estudiante: ";
+cin >> Edad;
+cout << "Ingrese la carrera del estudiante: ";
+cin >> Carrera;
+cout << "Ingrese el semestre del estudiante: ";
+cin >> Semestre;
+cout << "Ingrese el promedio final: ";
+cin >> Promedio;
+
+// Salida de datos
+cout << "\n--- Registro Exitoso ---" <<endl;
+cout << "Nombre del estudiante: " << Nombre del estudiante << endl;
+cout << "Edad: " << Edad << endl;
+cout << "Carrera: " << Carrera << endl;
+cout << "Semestre: " << Semestre << endl;
+cout << "Promedio: " << Promedio << endl;
+
+// Condicion
+if (Edad >= 18) {
+    cout << "El estudiante es mayor de edad" << endl;
+}
+else {
+    cout << "El estudiante es menor de edad" << endl;
+}
+
+if (Promedio >= 51) {
+    cout << "APROBO" << endl;
+}
+else {
+    cout << "REPROBO" << endl;
+}
+
+return 0
+ } 

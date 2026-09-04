@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main () {
+ string nombreCliente;
+ double m3 = 0.0;
+ double tarifaPorM3 = 0.0;
+ const double MONTO_FIJO = 10.00;
+ string categoria;
+ 
+ cout << "--- CALCULO DE TARIFA DE AGUA POTABLE ---" <<endl;
+ cout << "Ingrese nombre del cliente: ";
+ getline(cin, nombreCliente);
+ 
+ cout << "Ingrese los metros cubicos consumidos (m3): ";
+ cin >> m3;
+ 
+ // Determinacion de tarifa y categoria segun los rangos
+ if (m3 > 0 && m3 <= 15) {
+        tarifaPorM3 = 1.20;
+ categoria = "Cosnumo Minimo";
+ } else if (m3 > 15 && m3 <= 35) {
+     tarifaPorM3 = 2.50;
+     categoria = "Consumo Domestico";
+ } else if (m3 > 35 && m3 <= 70) {
+     tarifaPorM3 = 4.00;
+     categoria = "Consumo Comercial";
+ } else if (m3 > 70) {
+     taifaPorM3 = 6.50;
+     categoria = "Consumo Alto / Industrial";
+ } else }
+     cout << "Consumo no valido." << endl;
+     return 1;
+ }
+ 
+ // Calculo del monto toal (consumo por tarifa + cargo fijo)
+ double pagoTotal = (m3* tarifaPorM3) + MONTO_FIJO;
+ 
+ // Salida de resultados
+ cout << "\n-- RESUMEN DE FACTURA ---" << endl;
+ cout << "Nombre del cliente: " << nombreCliente << endl;
+ cout << "Monto fijo a pagar: Bs " << MONTO_FIJO << endl;
+ cout << "Categoria asignada: " << categoria << endl;
+ cout << "Pago total a pagar: Bs " << pagoTotal << endl;
+ 
+ return 0;
+ }
+  

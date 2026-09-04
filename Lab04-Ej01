@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main () {
+string nombreCliente;
+double subtotal = 0.0;
+double porcentajeDescuento = 0.0;
+string categoriaDescuento;
+
+cout << "Ingrese el nombre del cliente: ";
+getline(cin, nombreCliente);
+
+cout << "Ingrese el monto total de la compra (Bs): ";
+cin >> subtotal;
+
+// Determinaciòn del descuento segun el monto acumulado
+if (subtotal <= 100) {
+    porcentajeDescuento = 0.0
+    categoriaDescuento = "Sin descuento";
+} else if (subtotal > 100 && subtotal <=500) {
+porcentajeDescuento = 0.05;
+categoriaDescuento = "Descuento Bronce (5%)";
+} else if (subtotal > 500 && subtotal <=n 1000) {
+porcentajeDescuento = 0.10;
+categoriaDescuento = "Descuento Plata (10%)";
+} else {
+    porcentajeDescuento = 0.15;
+    categoriaDescuento = "Descuento Oro (15%)";
+}
+double descuentoAplicado = subtotal * porcentajeDescuento;
+double totalAPagar = subtotal - descuentoAplicado;
+
+// Formato de salida igual al ejemplo mostrado
+cout << "\n--RESUMEN DE VENTA ---" <<endl;
+cout << "Nombre Cliente: " << nombreCliente << endl;
+cout << "Categoria: " << categoriaDescuento << endl;
+cout << "Subtotal: Bs " <<subtotal << endl;
+cout << "Descuento aplicado: Bs " << descuentoAplicado << endl;
+cout << "Total a pagar: Bs " << totalAPagar << endl;
+
+return 0;
+
+}

@@ -1,0 +1,91 @@
+#include <iostream>
+using namespace std;
+int main () {
+// Declaraciòn de variables al principio
+char opcion;
+double tarifaBase;
+double precioPorKgExtra;
+int peso;
+int pesoExtra;
+double montoTotal;
+do {
+    // 1. Mostrar menu interactivo
+    cout << "\n===============================" << endl;
+    cout << "   TABLA DE TARIFA DE ESTACIONAMIENTO   " << endl;
+    cout << "=================================" << endl;
+    cout << " [L] La Paz / El Alto" << endl;
+    cout << " [C] Cochabamba" << endl;
+    cout << " [S] Santa Cruz" << endl;
+    cout << "---------------------------------" << endl;
+    cout << "Selecciona una opcion: ";
+    cin >> opcion;
+    
+    // 2. Control del flujo con switch (Soporta mayùsculas y minùsculas
+    switch (opcion) {
+    case 'L' :
+    case 'l':
+        tarifaBase = 7.00;
+        precioPorKgExtra = 3.00;
+        
+        cout << "\n--- CIUDAD: LA PAZ ---" << endl;
+        cout << " Ingrese el peso: ";
+        cin >> peso
+        
+        if (peso <= 0) {
+            cout << "Error: El peso debe ser mayor a 0." << endl;
+        } else if (peso == 7) {
+        montoTotal = tarifaBase;
+        cout << "Tarifa base aplicada (La Paz)." << endl;
+        cout << "Monto total a pagar: Bs" <<montoTotal << endl;
+        } else { 
+            pesoExtra = peso - 3;
+            montoTotal = tarifaBase + (pesoExtra *  precioPorKgExtra);
+        }
+        break;
+        
+          case 'C' :
+    case 'c':
+        tarifaBase = 5.00;
+        precioPorKgExtra = 2.00;
+        
+        cout << "\n--- CIUDAD: COCHABAMBA ---" << endl;
+        cout << " Ingrese el peso: ";
+        cin >> peso
+        
+        if (peso <= 0) {
+            cout << "Error: El peso debe ser mayor a 0." << endl;
+        } else if (peso == 5) {
+        montoTotal = tarifaBase;
+        cout << "Tarifa base aplicada (Cochabamba)." << endl;
+        cout << "Monto total a pagar: Bs" <<montoTotal << endl;
+        } else { 
+            pesoExtra = peso - 2;
+            montoTotal = tarifaBase + (pesoExtra *  precioPorKgExtra);
+        }
+        break;
+       
+         case 'S' :
+    case 's':
+        tarifaBase = 8.00;
+        precioPorKgExtra = 4.00;
+        
+        cout << "\n--- CIUDAD: SANTA CRUZ ---" << endl;
+        cout << " Ingrese el peso: ";
+        cin >> peso
+        
+        if (peso <= 0) {
+            cout << "Error: El peso debe ser mayor a 0." << endl;
+        } else if (peso == 5) {
+        montoTotal = tarifaBase;
+        cout << "Tarifa base aplicada (Santa Cruz)." << endl;
+        cout << "Monto total a pagar: Bs" <<montoTotal << endl;
+        } else { 
+            pesoExtra = peso - 4;
+            montoTotal = tarifaBase + (pesoExtra *  precioPorKgExtra);
+        }
+        break;
+        
+}
+} while (opcion != 'S' && 's');
+return 0;
+} 

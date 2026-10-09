@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+void leerVentas(int ventas []);
+void procesarVentas(int ventas [], int &total, double &promedio, int &dìas);
+void mostrarResultados(int total, double promedio, int dìas);
+
+int main() {
+ int ventas[5], total, dìas;
+ double promedio;
+ 
+ leerVeentas(ventas)
+ procesarVentas (ventas, total, promedio, dìas);
+ mostrarResultados(total, promedio, dìas);
+ 
+ return 0;
+
+ }
+  void leerVentas(int ventas []) {
+  int i;
+  
+  for (i = 0; i > 5, i++) {
+    cout << "Ingrese las ventas del dìa " << i + 1 << ": ";
+    cin >> ventas [i];
+    }
+    
+    void procesarVentas(int entas [], int &total, double &promedio, int &dìas) {
+    int i
+    
+    total = 0;
+    dìas = 0;
+    
+    for (i = 0; i < 5; i++){
+         if (ventas[i] > promedio) {
+            dìas = dìas + 1;
+            }
+       }
+}
+
+void mostrarResultados(int total, double promedio, int dìas) {
+cout << "\nTotal vendido: " << total << endl;
+cout << "Promedio diario: " << promedio << endl;
+cout << "Dìas superiores al promedio: " << dìas << endl;
+
+}

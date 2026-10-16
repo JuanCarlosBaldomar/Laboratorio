@@ -1,0 +1,100 @@
+#include <iostream>
+using namespace std;
+
+// PROTOTIPOS
+int leerEvaluaciones();
+double leerNota();
+double calcularPromedio(int evaluaciones);
+int determinarEstado(double promedio);
+void mostrarResultados(double promedio, int estado);
+
+// PROGRAMA PRINCIPAL
+int main() {
+
+    int evaluaciones, estado;
+    double promedio;
+
+    evaluaciones = leerEvaluaciones();
+
+    promedio = calcularPromedio(evaluaciones);
+    estado = determinarEstado(promedio);
+
+    mostrarResultados(promedio, estado);
+
+    return 0;
+}
+
+// FUNCION 1: LEER CANTIDAD DE EVALUACIONES
+int leerEvaluaciones() {
+
+    int evaluaciones;
+
+    do {
+        cout << "Ingrese la cantidad de evaluaciones: ";
+        cin >> evaluaciones;
+
+    } while (evaluaciones <= 0);
+
+    return evaluaciones;
+}
+
+// FUNCION 2: LEER NOTA
+double leerNota() {
+
+    double nota;
+
+   do {
+   cout << "Ingrese una nota entre 0 y 100: ";
+   cin >> nota;
+   } while (nota < 0 || nota > 100);
+
+    return nota;
+}
+
+// FUNCION 3: CALCULAR PROMEDIO CON FOR
+double calcularPromedio(int evaluaciones) {
+
+    int i;
+    double nota, suma, promedio;
+
+    suma = 0;
+
+    for (i = 1; i <= evaluaciones; i++) {
+
+        cout << "\nEvaluacion " << i << endl;
+
+        nota = leerNota();
+        suma = suma + nota;
+    }
+
+    promedio = suma / evaluaciones;
+
+    return promedio;
+}
+
+// FUNCION 4: DETERMINAR ESTADO
+int determinarEstado(double promedio) {
+
+    int estado;
+
+    if (promedio >= 51) {
+        estado = 1; // Aprobado
+    } else {
+        estado = 0; // Reprobado
+    }
+
+    return estado;
+}
+
+// FUNCION 5: MOSTRAR RESULTADOS
+void mostrarResultados(double promedio, int estado) {
+
+    cout << "\nRESULTADOS FINALES" << endl;
+    cout << "Promedio: " << promedio << endl;
+
+    if (estado == 1) {
+        cout << "Estado: Aprobado" << endl;
+    } else {
+        cout << "Estado: Reprobado" << endl;
+    }
+} 

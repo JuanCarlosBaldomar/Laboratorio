@@ -1,0 +1,86 @@
+
+#include <iostream>
+using namespace std;
+
+// PROTOTIPOS
+int leerNumero();
+int sumarNumeros(int n);
+int contarDigitos(int n);
+int sumarDigitos(int n);
+void mostrarResultados(int suma, int cantidad, int sumaDig);
+
+// PROGRAMA PRINCIPAL
+int main() {
+
+    int n, suma, cantidad, sumaDig;
+
+    n = leerNumero();
+
+    suma = sumarNumeros(n);
+    cantidad = contarDigitos(n);
+    sumaDig = sumarDigitos(n);
+
+    mostrarResultados(suma, cantidad, sumaDig);
+
+    return 0;
+}
+
+// FUNCION PARA LEER UN NUMERO POSITIVO
+int leerNumero() {
+
+    int n;
+
+    do {
+        cout << "Ingrese un numero entero positivo: ";
+        cin >> n;
+    } while (n <= 0);
+
+    return n;
+}
+
+// FUNCION PARA SUMAR LOS NUMEROS DESDE 1 HASTA N
+int sumarNumeros(int n) {
+
+    int i, suma = 0;
+
+    for (i = 1; i <= n; i++) {
+        suma = suma + i;
+    }
+
+    return suma;
+}
+
+// FUNCION PARA CONTAR LOS DIGITOS
+int contarDigitos(int n) {
+
+    int cantidad = 0;
+
+    while (n > 0) {
+        cantidad++;
+        n = n / 10;
+    }
+
+    return cantidad;
+}
+
+// FUNCION PARA SUMAR LOS DIGITOS
+int sumarDigitos(int n) {
+
+    int digito, suma = 0;
+
+    do {
+        digito = n % 10;
+        suma = suma + digito;
+        n = n / 10;
+    } while (n > 0);
+
+    return suma;
+}
+
+// FUNCION PARA MOSTRAR LOS RESULTADOS
+void mostrarResultados(int suma, int cantidad, int sumaDig) {
+
+    cout << "Suma desde 1 hasta N: " << suma << endl;
+    cout << "Cantidad de digitos: " << cantidad << endl;
+    cout << "Suma de los digitos: " << sumaDig << endl;
+}

@@ -1,0 +1,93 @@
+#include <iostream>
+using namespace std;
+
+int leerNumero(); 
+int sumarNumeros (int n);
+int contarDigitos (int n);
+int sumarDigitos (int n);
+void mostrarResultados(int suma, int cantidad, int sumaDig);
+
+int main () {
+
+int n, suma, cantidad, sumaDig;
+
+n = leerNumero();
+
+suma = sumarNumeros(n);
+    cantidad = contarDigitos(n);
+    sumaDig = sumarDigitos(n);
+
+    mostrarResultados(suma, cantidad, sumaDig);
+
+    return 0;
+}
+
+// FUNCION 1: LEER NUMERO CON DO-WHILE
+int leerNumero() {
+
+    int n;
+
+    do {
+        cout << "Ingrese un numero entero positivo: ";
+        cin >> n;
+
+    } while (n <= 0);
+
+    return n;
+}
+
+// FUNCION 2: SUMAR NUMEROS CON FOR
+int sumarNumeros(int n) {
+
+    int i, suma;
+
+    suma = 0;
+
+    for (i = 1; i <= n; i++) {
+        suma = suma + i;
+    }
+
+    return suma;
+}
+
+// FUNCION 3: CONTAR DIGITOS CON WHILE
+int contarDigitos(int n) {
+
+    int cantidad;
+
+    cantidad = 0;
+
+    while (n > 0) {
+        cantidad = cantidad + 1;
+        n = n / 10;
+    }
+
+    return cantidad;
+}
+
+// FUNCION 4: SUMAR DIGITOS CON DO-WHILE
+int sumarDigitos(int n) {
+
+    int digito, sumaDig;
+
+    sumaDig = 0;
+
+    do {
+        digito = n % 10;
+        sumaDig = sumaDig + digito;
+        n = n / 10;
+
+    } while (n > 0);
+
+    return sumaDig;
+}
+
+// FUNCION 5: MOSTRAR RESULTADOS
+void mostrarResultados(int suma, int cantidad, int sumaDig) {
+
+    cout << "\nRESULTADOS FINALES" << endl;
+    cout << "Suma desde 1 hasta N: " << suma << endl;
+    cout << "Cantidad de digitos: " << cantidad << endl;
+    cout << "Suma de los digitos: " << sumaDig << endl;
+}
+ 

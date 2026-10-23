@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+void leerNumero(int &N);
+void descomponerNumero(int N, int &u, int &d, int &c, int &m);
+void mostrarDigitos(int u, int d, int c, int m);
+
+int main () {}
+
+void leerNumero(int %N) {
+do {
+cout<<"Ingresar numero : "; 
+cin
+}
+void descomponerNumero (int N, int %u, int &d, int &c, int &m) {
+}
+void mostrarDigitos(int u, int d, int c, int m) {
+}
+
+#include <iostream>
+using namespace std;
+
+// PROTOTIPOS
+void leerNumero(int &N);
+void descomponerNumero(int N, int &u, int &d, int &c, int &m);
+void mostrarDigitos(int u, int d, int c, int m);
+
+// PROGRAMA PRINCIPAL
+int main() {
+    int N, u, d, c, m;
+
+    leerNumero(N);
+    descomponerNumero(N, u, d, c, m);
+    mostrarDigitos(u, d, c, m);
+
+    return 0;
+}
+
+// DEFINICION DE FUNCIONES
+void leerNumero(int &N) {
+    do {
+        cout << "Ingresar numero (1 a 9999): ";
+        cin >> N;
+
+        if (N < 1 || N >= 10000) {
+            cout << "Numero no valido. Intente nuevamente." << endl;
+        }
+    } while (N < 1 || N >= 10000);
+}
+
+void descomponerNumero(int N, int &u, int &d, int &c, int &m) {
+    u = N % 10;
+    d = (N / 10) % 10;
+    c = (N / 100) % 10;
+    m = (N / 1000) % 10;
+}
+
+void mostrarDigitos(int u, int d, int c, int m) {
+    cout << "Unidades: " << u << endl;
+    cout << "Decenas: " << d << endl;
+    cout << "Centenas: " << c << endl;
+    cout << "Unidades de mil: " << m << endl;
+}

@@ -1,0 +1,176 @@
+#include <iostream>
+using namespace std;
+
+// Constante para el tamaño maximo del vector
+const int MAX_ELEMENTOS = 100;
+
+// Prototipos de funciones
+int leerCantidad(int n);
+void registrarVector(int vec[], int n);
+void promedio(const int vec[], int n);
+void valorMinimo (int vec[], int n);
+void valorMaximo (int vec[], int n);
+
+int main() {
+    int vec[MAX_ELEMENTOS];
+    //1. Registrar cantidad de valores
+    int n = leerCantidad(n);
+
+    //2. Llenar el vector
+    registrarVector(vec n);
+    
+    //3. Llama funcion promedio
+   promedio(vec, n);
+   
+   //4. Buscar valor minimo
+   valorMinimo(vec, n);
+   
+   //5. Buscar valor maximo
+   valorMaximo(vec, n);
+   
+   return 0;
+   
+}
+
+// Lee y valida la cantidad de elementos a ingresar
+int leerCantidad(int n) {
+//    int n;
+    do {
+        cout << "Ingrese la cantidad de notas a registrar (1 a " << MAX_ELEMENTOS << "): ";
+        cin >> n;
+        if (n < 1 || n > MAX_ELEMENTOS) {
+            cout << "[ERROR] Cantidad fuera de rango. Intente de nuevo.\n";
+        }
+    } while (n < 1 || n > MAX_ELEMENTOS);
+    return n;
+}
+// Registra los elementos tipo int en el vector
+void registrarVector(int vec[], int n) {
+    cout << "\n--- REGISTRO DE VALORES ---" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << "Ingrese el valor para la posicion [" << i << "]: ";
+        cin >> vec[i];
+    }
+}
+
+#include <iostream>
+using namespace std;
+
+// Constante para el tamano maximo del vector
+const int MAX_ELEMENTOS = 100;
+
+// Prototipos de funciones
+int leerCantidad(int n);
+void registrarVector(int vec[], int n);
+void mostrarVector(const int vec[], int n);
+void promedio(const int vec[], int n);
+void valorMinimo(int vec[], int n);
+void valorMaximo(int vec[], int n);
+
+int main() {
+    int vec[MAX_ELEMENTOS];
+
+    // 1. Registrar cantidad de valores
+    int n = leerCantidad(0);
+
+    // 2. Llenar el vector
+    registrarVector(vec, n);
+
+    // 3. Mostrar notas registradas
+    mostrarVector(vec, n);
+
+    // 4. Calcular promedio
+    promedio(vec, n);
+
+    // 5. Buscar valor minimo
+    valorMinimo(vec, n);
+
+    // 6. Buscar valor maximo
+    valorMaximo(vec, n);
+
+    return 0;
+}
+
+// Lee y valida la cantidad de elementos a ingresar
+int leerCantidad(int n) {
+    do {
+        cout << "Ingrese la cantidad de notas a registrar (1 a "
+             << MAX_ELEMENTOS << "): ";
+        cin >> n;
+
+        if (n < 1 || n > MAX_ELEMENTOS) {
+            cout << "[ERROR] Cantidad fuera de rango. Intente de nuevo.\n";
+        }
+
+    } while (n < 1 || n > MAX_ELEMENTOS);
+
+    return n;
+}
+
+// Registra los elementos tipo int en el vector
+void registrarVector(int vec[], int n) {
+    cout << "\n--- REGISTRO DE NOTAS ---" << endl;
+
+    for (int i = 0; i < n; i++) {
+        do {
+            cout << "Ingrese la nota del estudiante " << i + 1 << ": ";
+            cin >> vec[i];
+
+            if (vec[i] < 0 || vec[i] > 100) {
+                cout << "[ERROR] Nota invalida. Ingrese nuevamente.\n";
+            }
+
+        } while (vec[i] < 0 || vec[i] > 100);
+    }
+}
+
+// Muestra todas las notas registradas
+void mostrarVector(const int vec[], int n) {
+    cout << "\n--- NOTAS REGISTRADAS ---" << endl;
+
+    for (int i = 0; i < n; i++) {
+        cout << vec[i] << " ";
+    }
+
+    cout << endl;
+}
+
+// Calcula el promedio de las notas
+void promedio(const int vec[], int n) {
+    int suma = 0;
+    float prom;
+
+    for (int i = 0; i < n; i++) {
+        suma = suma + vec[i];
+    }
+
+    prom = (float)suma / n;
+
+    cout << "\nPromedio general: " << prom << endl;
+}
+
+// Busca el valor minimo
+void valorMinimo(int vec[], int n) {
+    int minimo = vec[0];
+
+    for (int i = 1; i < n; i++) {
+        if (vec[i] < minimo) {
+            minimo = vec[i];
+        }
+    }
+
+    cout << "Nota menor: " << minimo << endl;
+}
+
+// Busca el valor maximo
+void valorMaximo(int vec[], int n) {
+    int maximo = vec[0];
+
+    for (int i = 1; i < n; i++) {
+        if (vec[i] > maximo) {
+            maximo = vec[i];
+        }
+    }
+
+    cout << "Nota mayor: " << maximo << endl;
+}

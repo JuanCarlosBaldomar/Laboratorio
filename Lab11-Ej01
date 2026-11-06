@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+void registrar(int notas[], int n);
+void mostrar(int notas[], int n);
+float promedio(int notas[], int n);
+void mayoryMenor(int notas[], int n, int &mayor, int &menor);
+int contarAprobados(int notas[], int n, int valor);
+int buscar(int notas[], int n, int valor);
+void actualizar(int notas[], int n,
+                int pos, int nuevo);
+void mostrar(int notas[], int n);
+
+int main() {
+    int notas[30]
+    int n, mayor, menor, aprobados;
+    int valor, posicion;
+    
+    do{
+        cout <<"Cantidad de estudiantes (1-30): ";
+        cin >> n;
+    } while (n < 1 || n > 30);
+    
+    registrar(notas, n);
+    
+    cout << "\nPromedio: " << promedio(notas, n) << endl;
+    mostrar(notas, n)
+    
+    cout << "\nPromedios: " << promedio(notas, n) << endl;
+    
+    mayorMenor(notas, n, mayor menor);
+    
+    cout << "Notas mayor: " << mayor << endl;
+    cout << "Nota menor: " << mayor << endl;
+    
+    aprobados = contarAprobados(notas, n);
+    
+    cout << "Aprobados: " << aprobados << endl;
+    cout << "Reprobados: " << n - aprobados << endl;
+    
+    cout << "\nIngresa la nota que desea buscar: ";
+    cin >> valor;
+    
